@@ -21,3 +21,8 @@ export const completeTask = createAction(
     "[Completed] Completed Task",
     props<{completedId:number}>()
 );
+
+export const pendingtask = createAction(
+    "[Pending] Pending Task",
+    props<{pendingId:number}>()
+);

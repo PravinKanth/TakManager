@@ -3,7 +3,7 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from '../states/app.state';
 import { selectSubmission } from '../states/submission/submission.selector';
-import { completeTask, deletetask } from '../states/submission/submission.action';
+import { completeTask, deletetask, pendingtask } from '../states/submission/submission.action';
 
 @Component({
   selector: 'app-row',
@@ -43,5 +43,9 @@ return "white"
 
   completedTask(completedId: number): void{
     this.store.dispatch(completeTask({completedId}));
+  }
+
+  pendingTask(pendingId: number): void{
+    this.store.dispatch(pendingtask({pendingId}));
   }
 }

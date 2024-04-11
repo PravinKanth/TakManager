@@ -19,7 +19,8 @@
       <div class="story"><span>{{ submission.storyPoint }}</span></div>
       <div class="priority"><span [ngStyle]= "{'backgroundColor':getColor(submission.priority)}">{{ submission.priority }}</span></div>
       <div class="actions">
-        <img (click)="completedTask(submission.id)" src="../../assets/Check.svg"/>
+        <img (click)="completedTask(submission.id)" *ngIf="submission.status==='pendingTasks'" src="../../assets/Check.svg"/>
+        <img (click)="pendingTask(submission.id)" *ngIf="submission.status==='completedTasks'" src="../../assets/Repeat.svg"/>
         <img (click)="deleteTask(submission.id)" src="../../assets/Trash.svg"/>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store"
-import { addFormSubmission, completeTask, deletetask, incrementId } from "./submission.action";
+import { addFormSubmission, completeTask, deletetask, incrementId, pendingtask } from "./submission.action";
 
 
 export interface SubmissionState{
@@ -31,7 +31,21 @@ export const submissionReducer = createReducer(
 
     })
 
-    }))
+    })),
+
+    on(pendingtask,(state,action) => ({
+        submissions:state.submissions.map((prop)=>{
+            if(prop.id===action.pendingId){
+                return {...prop, status:"pendingTasks"}
+            }
+    
+            return {...prop}
+    
+        })
+    
+        }))
+
+    
 
 
 );  

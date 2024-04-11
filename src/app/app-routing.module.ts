@@ -7,6 +7,7 @@ const routes: Routes = [
   {path:"form",component:FormComponent},
   {path:"taskboard", component:TaskboardComponent},
   {path: '', redirectTo: '/form', pathMatch: 'full' }, 
+  {path:"**", redirectTo:"/form"}
 ];
 
 @NgModule({
