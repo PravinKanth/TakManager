@@ -1,0 +1,44 @@
+.header{
+    position:sticky;
+    top: 0;
+    display: flex;
+    background-color: #99BC85;
+    align-items: center;
+    justify-content: space-between;
+    &__logo{
+        margin: 1rem 4rem;
+        img{
+            width: 6rem;
+        }
+    }
+
+    &__right{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 7rem;
+        margin-right: 10rem;
+
+        .clicked {
+            background-color: #3591dd;
+            color: #fff ;
+        }
+        
+        &__menu{
+            padding: 1rem 3rem;
+            background-color: #C4DFB2;
+            font-family: "inter";
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 0.8rem;
+            cursor: pointer;
+            transition: all 0.1s ease-out;
+        }
+
+        &__menu:hover{
+            background-color: #3591dd;
+        }
+
+    }
+}

@@ -1,0 +1,26 @@
+<!-- <div class="row-out">
+<div class="row">
+    <div class="task">Design Wireframe</div>
+    <div class="due">Apr 22, 2024</div>
+    <div class="story"><span>2</span></div>
+    <div class="priority"><span>High</span></div>
+    <div class="actions">
+        <img src="../../assets/Check.svg"/>
+        <img src="../../assets/Trash.svg"/>
+    </div>
+</div>
+</div> -->
+
+
+<div class="row-out" *ngFor="let submission of submissions$ | async">
+    <div *ngIf="submission.status===tasks" class="row">
+      <div class="task">{{ submission.taskName }}</div>
+      <div class="due">{{ submission.dueDate }}</div>
+      <div class="story"><span>{{ submission.storyPoint }}</span></div>
+      <div class="priority"><span [ngStyle]= "{'backgroundColor':getColor(submission.priority)}">{{ submission.priority }}</span></div>
+      <div class="actions">
+        <img (click)="completedTask(submission.id)" src="../../assets/Check.svg"/>
+        <img (click)="deleteTask(submission.id)" src="../../assets/Trash.svg"/>
+      </div>
+    </div>
+  </div>

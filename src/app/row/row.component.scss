@@ -1,0 +1,96 @@
+.row-out{
+    background-color: #E1F0DA;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+
+
+.row{
+    display: flex;
+    align-items: center;
+    height: 6rem;
+    width: 155rem;
+    margin: 0 auto;
+    border-radius: 15px;
+    padding: 0 2rem;
+    background-color: #fff;
+    // border: 1px solid black;
+
+    .task{
+        width: 70rem;
+        font-size: 1.4rem;
+        font-family: "poppins";
+        letter-spacing: 0.3px;
+        font-weight: 400;
+        // background-color: rgb(14, 117, 131);
+
+    }
+
+    .due{
+        text-align: center;
+        width: 20rem;
+        font-size: 1.4rem;
+        font-family: "poppins";
+        letter-spacing: 0.3px;
+        font-weight: 400;
+        // background-color: rgb(122, 72, 10);
+    }
+
+    .story{
+        width: 20rem;
+        text-align: center;
+        font-size: 1.4rem;
+        font-family: "poppins";
+        letter-spacing: 0.3px;
+        font-weight: 400;
+        // background-color: bisque;
+        
+        span{
+            padding: 0.3rem 1.2rem;
+            // background-color: azure;
+            border-radius: 14px;
+            border: 1px solid black;
+        }
+    }
+
+    .priority{
+        width: 20rem;
+        text-align: center;
+        font-size: 1.4rem;
+        font-family: "poppins";
+        letter-spacing: 0.3px;
+        font-weight: 450;   
+        // background-color: rgb(33, 166, 42);
+
+        span{
+            padding: 0.3rem 0rem;
+            width: 9rem;
+            display: inline-block;
+            background-color: rgb(226, 32, 32);
+            border-radius: 14px;
+            color: #fff;
+
+        }
+    }
+
+    .actions{
+        width: 20rem;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        padding-left: 8rem;
+
+        img{
+            width: 2.6rem;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        img:nth-child(2):hover{
+            filter: brightness(0) saturate(100%) invert(29%) sepia(89%) saturate(2281%) hue-rotate(342deg) brightness(95%) contrast(85%);
+
+        }
+    }
+}
+
+}

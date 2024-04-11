@@ -1,0 +1,35 @@
+<div class="taskboard">
+    <div class="title">
+        <span>Task Board</span>
+    </div>
+    <h3 class="pending">
+        Pending Tasks
+    </h3>
+
+    <div class="flex">
+        <div class="task">Task</div>
+        <div class="due">Due Date</div>
+        <div class="story">Story Point</div>
+        <div class="priority">Priority</div>
+        <div class="actions">Actions</div>
+    </div>
+
+    <app-row [tasks]="'pendingTasks'"></app-row>
+
+    <h3 style="margin-top: 5rem;" class="pending ">
+        Completed Tasks
+    </h3>
+
+    <div class="flex">
+        <div class="task">Task</div>
+        <div class="due">Due Date</div>
+        <div class="story">Story Point</div>
+        <div class="priority">Priority</div>
+        <div class="actions">Actions</div>
+    </div>
+
+    <app-row [tasks]="'completedTasks'"></app-row>
+
+
+
+</div>

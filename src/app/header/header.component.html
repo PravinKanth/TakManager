@@ -1,0 +1,9 @@
+<div class="header">
+    <div class="header__logo">
+        <img src="../../assets/todo_logo.png"/>
+    </div>
+    <div class="header__right">
+        <div class="header__right__menu" routerLink="/form" [ngClass]="{'clicked': isFormActive}">New Task  </div>
+        <div class="header__right__menu" routerLink="/taskboard" [ngClass]="{'clicked': isTaskboardActive}">Task Board</div>
+    </div>
+</div>

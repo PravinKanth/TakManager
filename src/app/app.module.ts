@@ -1,16 +1,31 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { FormComponent } from './form/form.component';
+import { RowComponent } from './row/row.component';
+import { TaskboardComponent } from './taskboard/taskboard.component';
+import { StoreModule } from '@ngrx/store';
+import { incrementReducer, submissionReducer } from './states/submission/submission.reducer';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    FormComponent,
+    RowComponent,
+    TaskboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    StoreModule.forRoot({submission:submissionReducer, id : incrementReducer},{})
   ],
   providers: [],
   bootstrap: [AppComponent]

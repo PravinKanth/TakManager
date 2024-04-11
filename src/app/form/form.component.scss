@@ -1,0 +1,90 @@
+.outer-green{
+    background-color: #E1F0DA;
+
+.form{
+    width: 48rem;
+    height: 66.65vh;
+    margin: 0 auto;
+    padding-top: 20rem;
+    padding-bottom: 66.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+    .child{
+        .input{
+            width: 100%;
+        outline: none;
+        border: none;
+        padding: 1.8rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 1.8rem;
+        font-family: "inter";
+        font-weight: 350;
+        background-color: #A4BC92;
+
+
+        }
+
+        .input::placeholder{
+            color: black;
+
+        }
+
+        .sel{
+            cursor: pointer;
+        }
+
+
+
+    }
+    .flex{
+        display: flex;
+        flex-direction: row;
+        gap:2rem;
+
+        .child1{
+            .input1{
+                width: 23rem;
+                outline: none;
+                border: none;
+                padding: 1.4rem 1rem;
+                border-radius: 0.5rem;
+                font-size: 1.8rem;
+                font-family: "inter";
+                font-weight: 350;
+                background-color: #A4BC92;
+
+            }
+
+            .input1::placeholder{
+                color:black;
+            }
+
+            .sel{
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    .submit{
+        width: 100%;
+        background-color: #e3675e;
+        color: #fff;
+        padding: 2rem 0;
+        text-align: center;
+        font-family: "inter";
+        font-size: 1.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+    }
+
+    .submit:hover{
+        background-color: #ee1c0d;
+    }
+}
+}
