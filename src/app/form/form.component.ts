@@ -4,6 +4,7 @@ import { AppState } from '../states/app.state';
 import { addFormSubmission, incrementId } from '../states/submission/submission.action';
 import { selectId, selectSubmission } from '../states/submission/submission.selector';
 import { Observable } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-form',
@@ -19,13 +20,25 @@ export class FormComponent {
   status: string = "pendingTasks"
   // submissions$: Observable<any[]>;
 
-  constructor(private store: Store<AppState>){
+  isFilledAll:boolean=true
+
+  constructor(private store: Store<AppState>, private toastr: ToastrService){
     // this.submissions$=this.store.select(selectSubmission);
     
     this.store.select(selectId).subscribe(id=>this.id=id);
   }
 
   onSubmit(): void{
+
+    if(this.taskName ==="" || this.dueDate ==="" || this.storyPoint==="" || this.priority===""){
+      this.isFilledAll=false
+      this.toastr.error("All Fields are required!","",{
+        timeOut: 3000,
+        positionClass:"toast-top-right",
+      });
+      return
+    }
+    this.isFilledAll=true
     const formData = {
       id:this.id,
       taskName: this.taskName,
@@ -35,10 +48,17 @@ export class FormComponent {
       status: this.status
     };
 
+
+
     console.log(formData);
 
     this.store.dispatch(addFormSubmission({ formData }));
     this.store.dispatch(incrementId());
+
+    this.toastr.success("Added to the TaskBoard!","",{
+      timeOut: 3000,
+      positionClass:"toast-top-right",
+    });
 
     this.taskName="";
     this.dueDate="";

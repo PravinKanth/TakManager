@@ -12,6 +12,11 @@ import { TaskboardComponent } from './taskboard/taskboard.component';
 import { StoreModule } from '@ngrx/store';
 import { incrementReducer, submissionReducer } from './states/submission/submission.reducer';
 
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +30,10 @@ import { incrementReducer, submissionReducer } from './states/submission/submiss
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    StoreModule.forRoot({submission:submissionReducer, id : incrementReducer},{})
+    StoreModule.forRoot({submission:submissionReducer, id : incrementReducer},{}),
+    CommonModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
